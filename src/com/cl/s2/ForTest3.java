@@ -20,7 +20,11 @@ public class ForTest3 {
 		for(int sec=0; sec<60; sec++) {
 			System.out.println(sec + "초");
 			if(sec == input) {
-				sec = 59;
+				
+				//조건식을 false로 만들기
+				//sec = 59;
+				
+				break;
 			}
 			
 		}
