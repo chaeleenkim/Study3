@@ -21,25 +21,59 @@ public class ForTest9 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		for(gunCase=0; gunCase < 3; gunCase++) {
-			System.out.println(gunCase+1 + "번째 탄창");
+		//for문 한 개로 단발과 점사 모두 
+		for(int tan=0; tan<3; tan++) {
 			System.out.println("1.단발? 2.점사?");
-			int mode = sc.nextInt();
+			int select = sc.nextInt();
+			String sound ="탕";
+			//int count = 30;
+			int num=1;
 			
-			switch(mode) {
+			if(select != 1) {
+				sound="타타탕";
+				//count = 10;
+				num = 3;
+			}
 			
-			case 1:
-				 for(bullet=0; bullet<30; bullet++) {
-					 System.out.println("탕");
-				 }
-				 break;
-			case 2:
-				for(bullet=0; bullet<10; bullet++) {
-					System.out.println("타타탕");
-				}
-				break;
+			//for(int i=0; i<count; i++)
+			for(int i=0; i<30; i=i+num) {
+				System.out.println(sound);
 			}
 		}
+
+		
+		
+		//방법 1
+//		if(select==1) {
+//			for(int i=0; i<30; i++) {
+//					System.out.println("탕");
+//			}
+//		}else {
+//			for(int i=0; i<10; i++) {
+//				System.out.println("타타탕");		
+//		}
+				
+		
+		//방법 2
+//		for(gunCase=0; gunCase < 3; gunCase++) {
+//			System.out.println(gunCase+1 + "번째 탄창");
+//			System.out.println("1.단발? 2.점사?");
+//			int mode = sc.nextInt();
+//			
+//			switch(mode) {
+//			
+//			case 1:
+//				 for(bullet=0; bullet<30; bullet++) {
+//					 System.out.println("탕");
+//				 }
+//				 break;
+//			case 2:
+//				for(bullet=0; bullet<10; bullet++) {
+//					System.out.println("타타탕");
+//				}
+//				break;
+//			}
+//		}
 		
 		
 		
