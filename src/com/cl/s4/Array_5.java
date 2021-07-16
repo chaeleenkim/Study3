@@ -72,26 +72,42 @@ public class Array_5 {
 				ar=ar3;
 				break;
 			case 4:
+			//두 인덱스 번호가 서로 다르게 돌아가는 경우에는
+			//두개를 따로 선언하는 것이 편하다
+				
+				if(ar.length == 0) {
+					System.out.println("data가 없어요");
+					continue;
+				}
+				
 				System.out.println("삭제할 인덱스 번호 입력");
 				int del = sc.nextInt();
-				
-				if(ar.length == 0 || del > ar.length-1) {
-					System.out.println("삭제할 인덱스가 없습니다");
+				if(del >= ar.length || del <0) {
+					System.out.println("범위를 벗어남");
 					continue;
 				}
 				
 				int [] ar4 = new int[ar.length - 1];
-						
-				for(int i=0; i<del; i++) {
-					ar4[i] = ar[i];
-				}
-				for(int i=del; i<ar4.length; i++) {
-					ar4[i] = ar[i+1];
+				int index = 0;
+				for(int i=0; i<ar.length; i++) {
+					if(del==i ) {
+						continue;
+					}
+					ar4[index] = ar[i];
+					index++;
 				}
 				
 				ar = ar4;
-					
 				
+				//내 풀이
+//				for(int i=0; i<del; i++) {
+//					ar4[i] = ar[i];
+//				}
+//				for(int i=del; i<ar4.length; i++) {
+//					ar4[i] = ar[i+1];
+//				}
+//				
+//				ar = ar4;
 				break;
 			default:
 				System.out.println("프로그램을 종료합니다");
