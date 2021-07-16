@@ -23,7 +23,7 @@ public class Array_5 {
 		
 		
 		while(flag) {
-			System.out.println("1.정보출력  2. 정보추가  3. 정보삭제  4. 종료");
+			System.out.println("1.정보출력  2. 정보추가  3. 정보삭제  4. 검색삭제 5. 종료");
 			int select = sc.nextInt();
 			switch(select) {
 			case 1:
@@ -70,6 +70,28 @@ public class Array_5 {
 				}
 				
 				ar=ar3;
+				break;
+			case 4:
+				System.out.println("삭제할 인덱스 번호 입력");
+				int del = sc.nextInt();
+				
+				if(ar.length == 0 || del > ar.length-1) {
+					System.out.println("삭제할 인덱스가 없습니다");
+					continue;
+				}
+				
+				int [] ar4 = new int[ar.length - 1];
+						
+				for(int i=0; i<del; i++) {
+					ar4[i] = ar[i];
+				}
+				for(int i=del; i<ar4.length; i++) {
+					ar4[i] = ar[i+1];
+				}
+				
+				ar = ar4;
+					
+				
 				break;
 			default:
 				System.out.println("프로그램을 종료합니다");
